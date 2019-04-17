@@ -1,0 +1,310 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.bhold {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.mtop {
+	display: none;
+}
+
+.btop {
+	width: 100%;
+	height: 24px;
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 10px;
+}
+
+.xinwen,
+.hao123,
+.ditu,
+.shiping,
+.tieba,
+.xueshu,
+.denglv,
+.shezhi {
+	margin-right: 10px;
+	margin-left: 10px;
+	color: #333;
+	font-weight: 700;
+	line-height: 24px;
+	font-size: 13px;
+	text-align: center;
+}
+
+.gengduochangping {
+	margin-right: 10px;
+	margin-left: 10px;
+	font-weight: 700;
+	line-height: 24px;
+	font-size: 13px;
+	text-align: center;
+	background: #38f;
+}
+
+.gengduochangping a {
+	text-decoration: none;
+}
+
+.gengduochangping a:visited {
+	color: white;
+}
+
+.bhold .bcenterpic {
+	width: 270px;
+	height: 129px;
+	margin-top: 100px;
+	background: url(../img/logal.png);
+	background-size: 100% 100%;
+	background-position: center;
+}
+
+.bcentersearch {
+	width: 640px;
+	height: 37px;
+	margin-top: 20px;
+	display: flex;
+}
+
+.searchleftcontainer {
+	width: 540px;
+	height: 37px;
+	background: #fff;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 0;
+	border-right-width: 0;
+	border-color: #b8b8b8 transparent #ccc #b8b8b8;
+	overflow: hidden;
+	border: 1px solid #b6b6b6;
+	border-width: 1px;
+	display: flex;
+}
+
+.searchleft {
+	width: 90%;
+	height: 22px;
+	font: 16px/18px arial;
+	line-height: 22px;
+	margin: 6px 0 0 7px;
+	padding: 0;
+	background: transparent;
+	border: 0;
+	outline: 0;
+	-webkit-appearance: none;
+}
+
+.icon-huatong {
+	display: none;
+}
+
+.icon-xiangji {
+	width: 10%;
+	height: 22px;
+	text-align: center;
+	padding-top: 8px;
+}
+
+.searchrightbtn {
+	width: 100px;
+	height: 36px;
+	background-color: #3385ff;
+	color: #fff;
+	font-size: 15px;
+	background: #3385ff;
+	border-bottom: 1px solid #2d78f4;
+	outline: medium;
+	*border-bottom: 0;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	text-align: center;
+}
+
+.mxiaoguangao {
+	display: none;
+}
+
+.bbottompiccontainer {
+	width: 60px;
+	height: 86px;
+	margin-top: 160px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.bbottompic {
+	width: 100%;
+	height: 60px;
+}
+
+.bbottompictext {
+	width: 24px;
+	height: 14px;
+	display: flex;
+	font-size: 10px;
+}
+
+.bottomcopyright1 {
+	width: 52%;
+	margin-top: 30px;
+	display: flex;
+	font-size: 10px;
+	justify-content: center;
+}
+
+.right1blank1,
+.she1,
+.about3,
+.guang2,
+.tuiguan4,
+.right1blank2 {
+	width: 100%;
+	text-align: center;
+}
+
+.bottomcopyright2 {
+	width: 530px;
+	height: 23px;
+	margin-top: 10px;
+	font-size: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.right2left,
+.right2right {
+	display: flex;
+}
+
+.icon-location {
+	width: 14px;
+	height: 17px;
+	margin-right: 6px;
+}
+
+.icon-gongan {
+	width: 14px;
+	height: 17px;
+}
+
+
+/*手机端设置*/
+
+@media only screen and (max-width:640px) {
+	/*消除不必要的元素*/
+	.btop,
+	.bbottompiccontainer,
+	.bottomcopyright1,
+	.bottomcopyright2 {
+		display: none;
+	}
+	/*手机端顶部的两个按钮*/
+	.mtop {
+		display: inline-block;
+		width: 100%;
+		height: 20px;
+		display: flex;
+		justify-content: center;
+		flex: 6;
+	}
+	.mtopmdeia {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		flex: 4;
+	}
+	.mtopleft,
+	.mtopright {
+		width: 100%;
+		height: 100%;
+		flex: 1;
+		margin-top: 10px;
+		align-items: center;
+	}
+	.icon-iconset0193,
+	.icon-yingyongpeizhi {
+		text-align: center;
+	}
+	/*中间logal替换成手机logal*/
+	.bhold .bcenterpic {
+		width: 183px;
+		height: 57px;
+		margin-top: 100px;
+		background: url(../img/logalshouji.png);
+		background-size: 100% 100%;
+		background-position: center;
+	}
+	.bcentersearch {
+		width: 341px;
+		height: 44px;
+	}
+	.searchleftcontainer {
+		border-bottom: 1px solid black;
+		border-top: 1px solid black;
+		border-left: 1px solid black;
+		border-right: 1px solid lightblue;
+	}
+	.searchleft {
+		width: 260px;
+		height: 44px;
+		margin: -6px 0 0 7px;
+	}
+	.icon-huatong {
+		display: inline-block;
+		/*background-color: yellow;*/
+		margin-top: 5px;
+		padding-right: 8px;
+		border-right: 1px solid saddlebrown;
+		width: 20%;
+		height: 22px;
+		text-align: center;
+	}
+	.icon-xiangji {
+		display: inline-block;
+		width: 10%;
+		height: 22px;
+		margin-left: 10px;
+		margin-right: 4px;
+		text-align: center;
+		padding-top: 8px;
+	}
+	.searchrightbtn {
+		background-color: white;
+		color: #38f;
+		box-sizing: inherit;
+		padding: 0 10px;
+		border: 0;
+		border-bottom: 1px solid black;
+		border-top: 1px solid black;
+		border-right: 1px solid black;
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 46px;
+		white-space: nowrap;
+		letter-spacing: -1px;
+	}
+	.mxiaoguangao {
+		width:80%;
+		height:230px;
+		display: block;
+		overflow: hidden;
+	}
+	.g1{
+		width:100%;
+		height:100%;
+		display:flex;	
+		position:relative;
+	}
+}

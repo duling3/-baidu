@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/load.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+	</head>
+
+	<body>
+		<div class="bhold">
+			<div class="mtop">
+				<div class="mtopleft">
+					<div class="iconfont icon-iconset0193"></div>
+				</div>
+				<div class="mtopmdeia"></div>
+				<div class="mtopright">
+					<div class="iconfont icon-yingyongpeizhi"></div>
+				</div>
+			</div>
+			<div class="btop">
+				<div class="xinwen">
+					<a href="">新闻</a>
+				</div>
+				<div class="hao123">
+					<a href="">hao123</a>
+				</div>
+				<div class="ditu">
+					<a href="">地图</a>
+				</div>
+				<div class="shiping">
+					<a href="">视频</a>
+				</div>
+				<div class="tieba">
+					<a href="">贴吧</a>
+				</div>
+				<div class="xueshu">
+					<a href="">学术</a>
+				</div>
+				<div class="denglv">
+					<a href="">登陆</a>
+				</div>
+				<div class="shezhi">
+					<a href="">设置</a>
+				</div>
+				<div class="gengduochangping">
+					<a href="">更多产品</a>
+				</div>
+			</div>
+			<div class="bcenterpic"></div>
+			<div class="bcentersearch">
+				<div class="searchleftcontainer">
+					<input class="searchleft" placeholder="搜索" maxlength="255" autocomplete="off">
+					<div class="iconfont icon-huatong"></div>
+					<div class="iconfont icon-xiangji"></div>
+				</div>
+				<input class="searchrightbtn" type="submit" value="百度一下" class="bg s_btn">
+			</div>
+
+			<div class="mxiaoguangao">
+				<div class="g1"><img src="img/1.gif" alt="" /></div>
+			</div>
+
+			<div class="bbottompiccontainer">
+				<div class="bbottompic" style="background:url(img/er.png) center;background-size:100% 100%;"></div>
+				<div class="bbottompictext"><span>百度</span></div>
+			</div>
+			<div class="bottomcopyright1">
+				<div class="right1blank1"> </div>
+				<div class="she1">
+					<a href="">把百度设为主页</a>
+				</div>
+				<div class="guang2">
+					<a href="">关于百度</a>
+				</div>
+				<div class="about3">
+					<a href="">About Baidu</a>
+				</div>
+				<div class="tuiguan4">
+					<a href="">百度推广</a>
+				</div>
+				<div class="right1blank2"> </div>
+			</div>
+			<div class="bottomcopyright2">
+				<div class="right2left">
+					@2019&nbsp;Baidu&nbsp;
+					<a href="">使用百度前必读</a>&nbsp;
+					<a href="">意见反馈</a>&nbsp; 京ICP证030173号
+					<div class="iconfont icon-location"></div>
+				</div>
+				<div class="right2right">
+					<a href="">京公网安备11000002000001号</a>
+					<div class="iconfont icon-gongan"></div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//获取将要操作的元素,将在其上显示用span包围的字幕与更换其图片
+			var gif = document.querySelector('.g1');
+
+			//改变背景图片的函数
+			var BkPicChange = function() {
+
+				}
+				//进行效果显示的函数
+			var effectdisplay = function() {
+
+			}
+
+			//随机产生各种字幕,还是选择吧,随机工作量大
+			var radomCreateText = function() {
+				var str = new Array(`你指间跃动的电光,是我永恒不变的信仰`,
+					`炮姐牛逼!!!`,
+					`我生气了,我想看炮姐的内裤,小气气`,
+					`我爱一方通行,超爱的`,
+					`我靠,抄着字幕我有点想吐`);
+				var whichOne = parseInt(Math.random() * str.length);
+				var text = str[whichOne];
+				return text;
+			}
+
+			//随机产生span标签,个数是随机的
+			var radomCreateSpan = function() {
+				var radomNum = 0;
+				var radomRadomNum = 0;
+				//改变它能改变更大的随机范围
+				var jj = 50;
+				//产生随机数,确认将产生多少个span标签,并将其插入到gif这个元素中
+				radomRadomNum = parseInt(Math.random() * jj);
+				radomNum = parseInt(Math.random() * radomRadomNum);
+				//				console.log('radomRadomNum'+radomRadomNum);
+				//				console.log('radomNum'+radomNum);	
+				//因为radomNum是我们产生的随机数,所以取其结果来生成span标签
+				//这就是我们要操作的字幕的插入次数,生成次数等
+				//让字幕不等于0,好操作点
+				if(0 == radomNum)
+					radomNum = 1;
+				return radomNum;
+			}
+
+			//随机改变字幕颜色
+			var changeTextColor = function(spans) {
+				var r = parseInt(Math.random() * 256);
+				var g = parseInt(Math.random() * 256);
+				var b = parseInt(Math.random() * 256);
+				var a = parseInt(Math.random() * 256);
+				spans.style.color = `rgba(${r},${g},${b},${a})`;
+			}
+
+			//改变字幕大小
+			var changeTextFontSize = function(spans) {
+				var tempFontSize = parseInt(Math.random() * 30);
+				spans.style.fontSize = `${tempFontSize}px`;
+				//返回字幕大小,用来设置span这个容器的大小
+				return tempFontSize;
+			}
+
+			//设置公共属性
+			var setCommonOriginal = function(spans) {
+				//				spans.style.width=`100px`;
+				//				spans.style.height=`20px`;
+				spans.style.zIndex = `1000`;
+				spans.style.position = `absolute`;
+			}
+
+			var setSpanWidth = function(spans, needFontSize, needFontCount) {
+				//				console.log('size'+needFontSize);
+				//				console.log('count'+needFontCount);
+				var temp = needFontCount * needFontSize;
+				//				console.log(temp);
+				spans.style.width = `${temp}px`;
+				spans.style.height = `${needFontSize}px`;
+			}
+
+			//在起点设置字幕标签的位置,即体现一点参差不齐的感觉
+			var setSpanPositionAtStartPoint = function(spans, getFontSize /*字幕中一个字的大小*/ , textLength /*字幕中内容的长度,即字的个数*/ ) {
+				//大多数普通会员是从图片的最右边从右往左移动 即为0值
+				//在右边有点随机位置 体现出一点参差不齐的感觉
+				//计算出一个字幕的总长度
+				var totalLength = getFontSize * textLength;
+				//字幕在右边的长度
+				var rright = -totalLength + parseInt(Math.random() * 20);
+				spans.style.right = `${rright}px`;
+				//				console.log(rright);
+				//这个TOP是随机值
+				//产生随机top   
+				var rtop = parseInt(Math.random() * (gif.offsetHeight));
+				spans.style.top = `${rtop}px`;
+				//				console.log(rtop);
+			}
+
+			//设置字幕的透明度
+			var setSpanTransparent = function(spans) {
+				//随机设置字体的透明度
+				var tempOpacity = parseFloat(Math.random());
+				//console.log(tempOpacity);
+				spans.style.opacity = `${tempOpacity}`;
+			}
+
+			//在图片上插入各种字幕
+			var insertSpan = function(spans, text) {
+				//在随机字幕函数中生成字幕用来加入span标签中
+				spans.innerHTML = text;
+				//将span插入到gif元素中
+				gif.appendChild(spans);
+			}
+
+			//得到right的值
+			var getSpanNowRight = function(spans) {
+				var getstyle = spans.getAttribute('style');
+				var sstr = getstyle.split(':');
+				var sstr1 = sstr[8].split(';');
+				var sstr2 = sstr1[0].split('p');
+				var a = Number(sstr2[0]);
+				//				console.log(a);
+				return a;
+			}
+
+			//计算终止距离
+			var calcStopDistant = function(spans) {
+
+				return parseInt(gif.offsetWidth + spans.innerHTML.length);
+			}
+
+			//开始函数
+			var start = function() {
+					//产生随机数
+					var radomNum = radomCreateSpan();
+					var spans = new Array();
+					var timer = new Array();
+					//这里i要改成random就会产生很多span
+					radomNum = radomNum;
+					for(var i = 0; i < radomNum; i++) {
+
+						//创建字幕  本来是span的
+						spans[i] = document.createElement('span');
+						//设置大多数公共相同的属性
+						setCommonOriginal(spans[i]);
+						//随机改变字幕颜色
+						changeTextColor(spans[i]);
+						//随机设置字幕大小	
+						var getFontSize = changeTextFontSize(spans[i]);
+						//随机设置字幕的透明度
+						setSpanTransparent(spans[i]);
+						//随机生成字幕
+						var SpanContent = radomCreateText();
+						//设置装字幕的容器span的长度
+						setSpanWidth(spans[i], getFontSize, SpanContent.length);
+						//改变字幕标签起始位置
+						setSpanPositionAtStartPoint(spans[i], getFontSize, SpanContent.length);
+
+						//设置类名
+						spans[i].className=`textfall`;
+						
+						//最后将字幕插入图片上
+						insertSpan(spans[i], SpanContent);
+					}
+
+				} //每10s启动一次start
+		//定时产生字幕
+		setInterval(function(){
+			//清除所有span
+			var spans = new Array();
+			spans = document.querySelectorAll(".textfall");
+			for(var i=0;i<spans.length;i++)
+			{
+				spans[i].parentElement.removeChild(spans[i]);
+			}
+			
+			start();
+			
+		},4500);
+			setTimeout(start, 100);
+
+			function duration() {
+				//为每个span字幕设置一个随机的左移步长,即向左加的正值加在style.right上
+				//为每个span字幕设置一个随机的左移时间,即向左移的时间
+				var leftTime = parseInt(Math.random() * 10000000000);
+				var leftStep = parseInt(Math.random() * 20);
+				
+
+				var spans = new Array();
+				
+				spans = document.querySelectorAll(".textfall");
+//				console.log(spans);
+				
+				//计算所有的终止距离
+//				var inum=parseInt(Math.random()*spans.length);
+				for(var i=0;i<spans.length;i++)
+				{
+					//得到终止距离
+					var MoveLeftOverDistant = calcStopDistant(spans[i]);
+					var speed=18;
+					var nowright=getSpanNowRight(spans[i]);
+					nowright+=speed;
+					spans[i].style.right =`${nowright}px`;
+				}
+			}
+			//定时移动
+			setInterval(function(){
+				duration();
+			},100);
+			
+			
+		</script>
+	</body>
+
+</html>
